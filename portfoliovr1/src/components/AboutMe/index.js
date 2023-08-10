@@ -1,7 +1,9 @@
-<div>
-    <p>
-        <hr>
-            <br>
+function AboutMe() {
+    return (
+        <div className="about-me">
+            <img src="/assets/images/avatar.jpg" alt="Developer's Avatar" className="about-me__avatar" />
+            <h2>About Me</h2>
+            <p className="about-me__bio">
                 I am a full-stack software developer equipped with comprehensive training from the University of
                 California, Irvine from my undergrad, and, more recently, at the Full Stack Development
                 program with the University of California, Los Angeles. My wide-ranging expertise spans numerous
@@ -18,7 +20,9 @@
                 cutting-edge
                 projects. I am eager to find opportunities to
                 collaborate, innovate, and make meaningful impacts in the dynamic field of technology.
-                <br></br>
-                <hr>
-                </p>
-            </div>
+            </p>
+        </div>
+    );
+}
+
+export default AboutMe;
