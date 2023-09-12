@@ -1,6 +1,8 @@
 import React from 'react';
 import Project from '../Project';
 
+import { Card, Button } from 'react-bootstrap';
+
 function Portfolio() {
     const projects = [
         {
@@ -22,13 +24,14 @@ function Portfolio() {
             <h2>Portfolio</h2>
             <div className="projects-container">
                 {projects.map((project, index) => (
-                    <Project 
-                        key={index}
-                        title={project.title}
-                        image={project.image}
-                        deployedLink={project.deployedLink}
-                        repoLink={project.repoLink}
-                    />
+                    <Card style={{ width: '18rem' }}>
+                    <Card.Img variant="top" src={project.image} />
+                    <Card.Body>
+                      <Card.Title>{project.title}</Card.Title>
+                      <Button variant="primary" href={project.deployedLink} target="_blank">Deployed App</Button>
+                      <Button variant="secondary" href={project.repoLink} target="_blank">GitHub Repo</Button>
+                    </Card.Body>
+                  </Card>
                 ))}
             </div>
         </div>

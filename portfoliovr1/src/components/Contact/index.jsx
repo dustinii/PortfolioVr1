@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -6,7 +7,7 @@ function Contact() {
     email: '',
     message: ''
   });
-  
+
   const [errors, setErrors] = useState({
     name: false,
     email: false,
@@ -38,29 +39,29 @@ function Contact() {
     <div className="contact-section">
       <h2>Contact Me</h2>
 
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
 
-        <div className="input-group">
-          <label>Name:</label>
-          <input type="text" name="name" value={formData.name} onChange={handleInputChange} required />
+        <Form.Group>
+          <Form.Label>Name:</Form.Label>
+          <Form.Control type="text" name="name" value={formData.name} onChange={handleInputChange} required />
           {errors.name && <span className="error-message">Name is required</span>}
-        </div>
+        </Form.Group>
 
-        <div className="input-group">
-          <label>Email:</label>
-          <input type="email" name="email" value={formData.email} onChange={handleInputChange} required />
+        <Form.Group>
+          <Form.Label>Email:</Form.Label>
+          <Form.Control type="email" name="email" value={formData.email} onChange={handleInputChange} required />
           {errors.email && <span className="error-message">{typeof errors.email === 'string' ? errors.email : 'Email is required'}</span>}
-        </div>
+        </Form.Group>
 
-        <div className="input-group">
-          <label>Message:</label>
-          <textarea name="message" value={formData.message} onChange={handleInputChange} required></textarea>
+        <Form.Group>
+          <Form.Label>Message:</Form.Label>
+          <Form.Control as="textarea" name="message" value={formData.message} onChange={handleInputChange} required />
           {errors.message && <span className="error-message">Message is required</span>}
-        </div>
+        </Form.Group>
 
-        <button type="submit">Submit</button>
+        <Button type="submit">Submit</Button>
 
-      </form>
+      </Form>
     </div>
   );
 }

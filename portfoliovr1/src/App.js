@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 // Importing components
 import Header from './components/Header';
 import AboutMe from './components/AboutMe';
@@ -15,7 +15,8 @@ function App() {
 
   return (
     <div className="App">
-      <Header activeSection={activeSection} onSectionChange={setActiveSection} />      <main>
+      <Header activeSection={activeSection} onSectionChange={setActiveSection} />
+      <main>
         {activeSection === 'AboutMe' && <AboutMe />}
         {activeSection === 'Portfolio' && <Portfolio />}
         {activeSection === 'Contact' && <Contact />}
